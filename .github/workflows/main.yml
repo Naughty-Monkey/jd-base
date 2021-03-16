@@ -29,3 +29,11 @@ jobs:
           source_branch: "master"
           destination_branch: "master"
           github_token: ${{ secrets.PAT }}
+      - name: sync jd-base-py
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/dockere/jd-base.git"
+          source_branch: "py"
+          destination_branch: "py"
+          github_token: ${{ secrets.PAT }}
