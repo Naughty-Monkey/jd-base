@@ -45,4 +45,13 @@ jobs:
           source_branch: "master"
           destination_branch: "shell"
           github_token: ${{ secrets.PAT }}
+      - name: sync jd-scripts
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/danwangshimoluo/JdScripts.git"
+          source_branch: "main"
+          destination_branch: "bk1"
+          github_token: ${{ secrets.PAT }}
+          
           
